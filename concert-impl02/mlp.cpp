@@ -148,6 +148,7 @@ int main (int argc, char *argv[]){
 		clock_t begin = clock();
 		mono->time_begin = crono.getTime();
 		uint64_t s = system_current_time_millis();
+		cout << "AAAA " <<  constr_heur << endl;
 		switch(constr_heur){
 			case 0:
 				cout << "Solving MIP Model" << endl;;
@@ -192,8 +193,7 @@ int main (int argc, char *argv[]){
 					mono->Convergent_heuristic();
 					break;
 				default:
-					cout << "Opção inválidade: usando LB" <<endl;
-					mono->LocalBranching(k0);
+					cout << "Opção inválidade: Nenhum método será utilizado" <<endl;
 					break;
 			}
 		} else {
